@@ -9,8 +9,13 @@
 
 .header {
   height: 6rem;
+  font-size: 1.4rem;
   background-color: var(--color-grey--light-1);
   border-bottom: var(--color-grey--light-2);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content {
