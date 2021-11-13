@@ -9,14 +9,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="shortcut icon" type="image/svg" href="img/favicon.svg" />
 
-    <title>trillo &mdash; Your all-in-one booking app</title>
+    <title>Hotello &mdash; book all at once</title>
   </head>
   <body>
     <div class="container">
       <header class="header">
-        <img src="img/hotello.png" alt="trillo logo" class="logo" />
+        <img src="img/hotello.png" alt="hotello logo" class="logo" />
 
         <form action="#" class="search">
           <input
@@ -56,7 +56,44 @@
       </header>
 
       <div class="content">
-        <nav class="sidebar">Sidebar navigation</nav>
+        <nav class="sidebar">
+          <ul class="side-nav">
+            <li class="side-nav__item side-nav__item--active">
+              <a href="#" class="side-nav__link">
+                <svg class="side-nav__icon">
+                  <use xlink:href="img/sprite.svg#icon-home"></use>
+                </svg>
+                <span>Hotel</span>
+              </a>
+            </li>
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <svg class="side-nav__icon">
+                  <use xlink:href="img/sprite.svg#icon-airplane"></use>
+                </svg>
+                <span>Flight</span>
+              </a>
+            </li>
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <svg class="side-nav__icon">
+                  <use xlink:href="img/sprite.svg#icon-key"></use>
+                </svg>
+                <span>Car rental</span>
+              </a>
+            </li>
+            <li class="side-nav__item">
+              <a href="#" class="side-nav__link">
+                <svg class="side-nav__icon">
+                  <use xlink:href="img/sprite.svg#icon-map"></use>
+                </svg>
+                <span>Tours</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="legal">&copy; 2021 by Hotello. All rights reserved.</div>
+        </nav>
         <main class="hotel-view">All the changable content</main>
       </div>
     </div>

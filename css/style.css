@@ -1,7 +1,7 @@
 :root {
   --color-primary: #19647e;
   --color-primary--light: #119da4;
-  --color-primary--dark: #249acc;
+  --color-primary--dark: #09445d;
   --color-grey--light-1: #faf9f9;
   --color-grey--light-2: #f4f2f2;
   --color-grey--light-3: #f0eeee;
@@ -56,16 +56,19 @@ body {
 .sidebar {
   background-color: var(--color-grey--dark-1);
   color: var(--color-grey--light-1);
-  flex: 0 0 16%; }
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .hotel-view {
   background-color: var(--color-grey--light-1);
-  flex: 1; }
+  flex: 1;
+  height: 60rem; }
 
 .logo {
   height: 6rem;
-  margin-left: 2.4rem;
-  fill: var(--color-primary); }
+  margin-left: 2.4rem; }
 
 .search {
   flex: 0 0 40%;
@@ -141,3 +144,54 @@ body {
     height: 3.2rem;
     border-radius: 50%;
     margin-right: 1rem; }
+
+.side-nav {
+  list-style: none;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 1.2rem; }
+  .side-nav__item {
+    letter-spacing: 0.8px;
+    padding: 1.8rem 2.4rem;
+    text-transform: uppercase;
+    display: block;
+    position: relative;
+    cursor: pointer; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 0.8rem; }
+  .side-nav__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s, width 2s 1s, background-color 0.2s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    transform: scaleX(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary--light); }
+  .side-nav__link:link, .side-nav__link:visited {
+    color: var(--color-grey--light-1);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10; }
+  .side-nav__link:hover, .side-nav__link:active {
+    color: currentColor; }
+  .side-nav__icon {
+    height: 2.4rem;
+    width: 2.4rem;
+    margin-right: 1.6rem;
+    fill: currentColor; }
+
+.legal {
+  font-size: 1.2rem;
+  color: var(--color-grey--light-4);
+  text-align: center;
+  padding: 2.4rem; }
