@@ -9,7 +9,9 @@
   --color-grey--dark-1: #333;
   --color-grey--dark-2: #555;
   --color-grey--dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 3); }
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.4);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+  --line: 1px solid var(--color-grey--light-2); }
 
 * {
   margin: 0;
@@ -38,14 +40,12 @@ body {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-grey--light-2);
-  box-shadow: var(--shadow-dark);
-  height: 50rem; }
+  box-shadow: var(--shadow-dark); }
 
 .header {
   height: 6rem;
   font-size: 1.4rem;
   background-color: var(--color-grey--light-1);
-  border-bottom: 1px solid var(--color-grey--light-2);
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -63,8 +63,25 @@ body {
 
 .hotel-view {
   background-color: var(--color-grey--light-1);
-  flex: 1;
-  height: 60rem; }
+  flex: 1; }
+
+.detail {
+  display: flex;
+  padding: 3.6rem;
+  background-color: var(--color-grey--light-2);
+  border-bottom: var(--line); }
+
+.description {
+  font-size: 1.4rem;
+  background-color: var(--color-grey--light-1);
+  box-shadow: var(--shadow-light);
+  padding: 3.2rem;
+  flex: 0 0 60%;
+  margin-right: 3.6rem; }
+
+.user-reviews {
+  background-color: lightcyan;
+  flex: 1; }
 
 .logo {
   height: 6rem;
@@ -206,7 +223,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-grey--light-2); }
+  border-bottom: var(--line); }
   .overview__heading {
     font-size: 2.4rem;
     font-weight: 300;
@@ -270,3 +287,44 @@ body {
   100% {
     transform: scale(1);
     box-shadow: none; } }
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2.4rem; }
+
+.list {
+  list-style: none;
+  margin: 2.4rem 0;
+  padding: 2.4rem 0;
+  border-top: var(--line);
+  display: flex;
+  flex-wrap: wrap; }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.8rem; }
+    .list__item::before {
+      content: "";
+      display: inline-block;
+      height: 1.6rem;
+      width: 1.6rem;
+      margin-right: 0.8rem;
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/cheveron-right.svg);
+      mask-image: url(../img/cheveron-right.svg);
+      -webkit-mask-size: cover;
+      mask-size: cover; }
+
+.recommend {
+  font-size: 1.2rem;
+  color: var(--color-grey--dark-3);
+  display: flex;
+  align-items: center; }
+  .recommend__count {
+    margin-right: auto; }
+  .recommend__photo {
+    box-sizing: content-box;
+    height: 5rem;
+    width: 5rem;
+    border: 2px solid var(--color-grey--light-1);
+    border-radius: 50%; }
+    .recommend__photo:not(:first-child) {
+      margin-left: -1.6rem; }

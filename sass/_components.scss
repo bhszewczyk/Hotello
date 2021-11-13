@@ -214,7 +214,7 @@
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid var(--color-grey--light-2);
+  border-bottom: var(--line);
 
   &__heading {
     font-size: 2.4rem;
@@ -308,5 +308,73 @@
   100% {
     transform: scale(1);
     box-shadow: none;
+  }
+}
+
+////////////////////
+// PARAGRAPH
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2.4rem;
+}
+
+////////////////////
+// LIST
+.list {
+  list-style: none;
+  margin: 2.4rem 0;
+  padding: 2.4rem 0;
+  border-top: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.8rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 1.6rem;
+      width: 1.6rem;
+      margin-right: 0.8rem;
+
+      // // Older browsers
+      // background-image: url(../img/cheveron-right.svg);
+      // background-size: cover;
+
+      //Newer browsers - mask-size:
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/cheveron-right.svg);
+      mask-image: url(../img/cheveron-right.svg);
+      -webkit-mask-size: cover;
+      mask-size: cover;
+    }
+  }
+}
+
+////////////////////
+// RECOMMEND
+.recommend {
+  font-size: 1.2rem;
+  color: var(--color-grey--dark-3);
+
+  display: flex;
+  align-items: center;
+  &__count {
+    margin-right: auto;
+  }
+
+  &__photo {
+    box-sizing: content-box;
+    height: 5rem;
+    width: 5rem;
+    border: 2px solid var(--color-grey--light-1);
+    border-radius: 50%;
+
+    &:not(:first-child) {
+      margin-left: -1.6rem;
+    }
   }
 }
