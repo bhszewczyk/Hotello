@@ -1,3 +1,21 @@
-@import "base";
-@import "layout";
-@import "components";
+@import "abstracts/animations";
+@import "abstracts/variables";
+
+@import "base/base";
+
+@import "components/buttons";
+@import "components/cta";
+@import "components/gallery";
+@import "components/header";
+@import "components/recommend";
+@import "components/review";
+
+@import "layouts/container";
+@import "layouts/navigation";
+@import "layouts/sidebar";
+
+@import "pages/hotel";
+
+
+
+
