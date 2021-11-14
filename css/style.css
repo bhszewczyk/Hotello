@@ -278,19 +278,19 @@ body {
     margin-left: 4px;
     transition: 0.2s; }
   .btn-inline:hover {
-    color: var(--color-primary--light); }
+    color: var(--color-primary--light);
+    animation: pulsate 2s infinite; }
     .btn-inline:hover span {
       margin-left: 8px; }
   .btn-inline:focus {
-    outline: none;
-    animation: pulsate 1s infinite; }
+    outline: none; }
 
 @keyframes pulsate {
   0% {
     transform: scale(1);
     box-shadow: none; }
   50% {
-    transform: scale(1.02);
+    transform: scale(1.05);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
   100% {
     transform: scale(1);
@@ -380,3 +380,46 @@ body {
     color: var(--color-grey--light-3);
     line-height: 1;
     z-index: 1; }
+
+.cta {
+  padding: 3.2rem 0;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.4rem; }
+
+.btn {
+  cursor: pointer;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--color-grey--light-2);
+  border: none;
+  border-radius: 100px;
+  background-image: linear-gradient(to bottom right, var(--color-primary--light), var(--color-primary--dark));
+  position: relative;
+  overflow: hidden; }
+  .btn > * {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    transition: all 0.2s; }
+  .btn:hover {
+    background-image: linear-gradient(to top left, var(--color-primary--light), var(--color-primary--dark));
+    box-shadow: var(--shadow-light);
+    animation: pulsate 2s infinite; }
+  .btn:focus {
+    outline: none; }
+  .btn__visible {
+    padding: 1.2rem 6.4rem; }
+  .btn:hover .btn__visible {
+    transform: translatey(100%); }
+  .btn__hidden {
+    padding: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -100%; }
+  .btn:hover .btn__hidden {
+    top: 0; }
