@@ -1,11 +1,19 @@
 .header {
-  height: 6rem;
+  min-height: 6rem;
   font-size: 1.4rem;
   background-color: var(--color-grey--light-1);
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $bp-small-tablets) {
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (max-width: $bp-big-phones) {
+    flex-wrap: wrap;
+  }
 }
 
 ////////////////////
@@ -14,6 +22,10 @@
 .logo {
   height: 6rem;
   margin-left: 2.4rem;
+
+  @media only screen and (max-width: $bp-small-tablets) {
+    margin-left: 1.2rem;
+  }
 }
 
 ////////////////////
@@ -25,6 +37,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-big-phones) {
+    order: 1;
+    flex: 0 0 100%;
+    padding: 1.2rem 2.4rem;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: $bp-small-phones) {
+    padding: 0.8rem 1.6rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
 
   &__input {
     font-family: inherit;

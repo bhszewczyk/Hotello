@@ -1,6 +1,7 @@
 @import "abstracts/animations";
 @import "abstracts/variables";
 
+@import "base/breakpoints";
 @import "base/base";
 
 @import "components/buttons";
@@ -11,11 +12,6 @@
 @import "components/review";
 
 @import "layouts/container";
-@import "layouts/navigation";
 @import "layouts/sidebar";
 
 @import "pages/hotel";
-
-
-
-

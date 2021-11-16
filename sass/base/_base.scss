@@ -12,6 +12,18 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-small-desktop) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-tablets-vertical) {
+    font-size: 43.75%;
+  }
+
+  @media only screen and (max-width: $bp-small-phones) {
+    font-size: 37.5%;
+  }
 }
 
 body {
@@ -58,15 +70,18 @@ body {
       margin-right: 0.8rem;
 
       // // Older browsers
-      // background-image: url(../img/cheveron-right.svg);
-      // background-size: cover;
+      background-image: url(../img/cheveron-right.svg);
+      background-size: cover;
 
       //Newer browsers - mask-size:
-      background-color: var(--color-primary);
-      -webkit-mask-image: url(../img/cheveron-right.svg);
-      mask-image: url(../img/cheveron-right.svg);
-      -webkit-mask-size: cover;
-      mask-size: cover;
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        background-image: none;
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/cheveron-right.svg);
+        mask-image: url(../img/cheveron-right.svg);
+        -webkit-mask-size: cover;
+        mask-size: cover;
+      }
     }
   }
 }
